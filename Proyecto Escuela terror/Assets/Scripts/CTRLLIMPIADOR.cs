@@ -11,7 +11,7 @@ public class CTRLLIMPIADOR : MonoBehaviour
         if (collision.CompareTag("Pelota"))  //cuando el trigger toca con pelota pasa:
         {
             contador.contadorGoles = 0; //reinicia contador
-            pelota.transform.position = new Vector3(25.93f, -0.62f, 0);
+            pelota.transform.position = new Vector3(24.39f, 6.23f, 0);
         }                                     
     }
 }

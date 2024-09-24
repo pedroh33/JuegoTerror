@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class JUGADOR : MonoBehaviour
 {
@@ -9,13 +10,22 @@ public class JUGADOR : MonoBehaviour
     public float rotVelocidad;
     public bool cercaLocker;
     public bool escondido;
+    public bool ultraVioleta;
+    public Light2D linterna;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cercaLocker = false;
         escondido = false;
+        ultraVioleta = false;
     }
-
+    private void Update()
+    {
+        if (ultraVioleta)
+        {
+            linterna.color = Color.magenta;
+        }
+    }
     void FixedUpdate()
     {
         MoveRB(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
