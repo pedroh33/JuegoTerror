@@ -24,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
                           //Tengo pensado hacer for que siga la array haciendo que se cumpla un if que vaya anotando puntos
                           //hasta llegar a que el bool del puzle resuelto sea TRUE
+                          //
                           
     }
 }
