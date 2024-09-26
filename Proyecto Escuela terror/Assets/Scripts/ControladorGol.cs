@@ -16,7 +16,7 @@ public class ControladorGol : MonoBehaviour
         if (collision.CompareTag("Pelota"))
         {
             contadorGoles++;
-            pelota.transform.position = new Vector3(24.39f, 6.23f, 0);
+            pelota.transform.position = new Vector3(17.14f, 4.2026f, 0);
         }                             //cuando el trigger toca con pelota pasa:
     }
     void Update()

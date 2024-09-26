@@ -44,7 +44,7 @@ public class ControladorMostro : MonoBehaviour
     void ResetTimer()
     {
         currentTime = startTime; 
-        numeroRandom=Random.Range(1, 3);
+        numeroRandom=Random.Range(1, 10);
     }
     void ResetTimerSinDos()
     {

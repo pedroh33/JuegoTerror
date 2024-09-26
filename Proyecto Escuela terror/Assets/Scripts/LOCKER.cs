@@ -6,37 +6,31 @@ public class LOCKER : MonoBehaviour
 {
     public JUGADOR jugador;
     public GameObject ImagenLocker;
+    public bool escondido;
+    public bool cercaLocker;
     void Start()
     {
         ImagenLocker.SetActive(false);
-        
+        escondido = false;
+        cercaLocker = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       /* if (Input.GetKey(KeyCode.E) && jugador.cercaLocker && !jugador.escondido) // esconderse en el locker
-        {
-            ImagenLocker.SetActive(true);
-            jugador.velocidad = 0;
-            jugador.escondido = true;
-        }
-        else if (jugador.escondido)
-        {
-            ImagenLocker.SetActive(false);
-            jugador.velocidad = 2;
-            jugador.escondido = false;
-        }*/
-       if (Input.GetKeyDown (KeyCode.E) && jugador.cercaLocker)
+      
+       if (Input.GetKeyDown (KeyCode.E) && cercaLocker)
         {
             
-            if (!jugador.escondido)
+            if (!escondido)
             {
                 ImagenLocker.SetActive(true);
                 jugador.velocidad = 0;
                 jugador.rotVelocidad = 0;
-                jugador.escondido = true;
+                escondido = true;
                 Debug.Log("Entra");
+                jugador.escondido = true;
 
             }
             else 
@@ -44,8 +38,9 @@ public class LOCKER : MonoBehaviour
                 ImagenLocker.SetActive(false);
                 jugador.velocidad = 3;
                 jugador.rotVelocidad = 0.5f;
-                jugador.escondido = false;
+                escondido = false;
                 Debug.Log("Sale");
+                jugador.escondido = false;
             }
         }
     }
@@ -54,7 +49,7 @@ public class LOCKER : MonoBehaviour
     {
         if (collision.CompareTag("TriggerJugador"))
         {
-            jugador.cercaLocker = true;
+            cercaLocker = true;
         }
         
     }
@@ -63,7 +58,7 @@ public class LOCKER : MonoBehaviour
     {
         if (collision.CompareTag("TriggerJugador"))
         {
-            jugador.cercaLocker = false;
+            cercaLocker = false;
         }
     }
 }
