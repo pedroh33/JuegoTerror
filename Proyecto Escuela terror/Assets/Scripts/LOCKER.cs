@@ -36,8 +36,8 @@ public class LOCKER : MonoBehaviour
             else 
             {
                 ImagenLocker.SetActive(false);
-                jugador.velocidad = 3;
-                jugador.rotVelocidad = 0.5f;
+                jugador.velocidad = 4;
+                jugador.rotVelocidad = 0.8f;
                 escondido = false;
                 Debug.Log("Sale");
                 jugador.escondido = false;

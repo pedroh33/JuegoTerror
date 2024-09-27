@@ -7,6 +7,7 @@ public class ControladorMostro : MonoBehaviour
     public float currentTime;
     public float numeroRandom;
     Animator anim;
+   // public AudioSource sonidoMostro;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class ControladorMostro : MonoBehaviour
     }
 
     void Update()
-    {        
+    {                
         currentTime -= Time.deltaTime;
      
         if (currentTime <= 0)
@@ -27,6 +28,7 @@ public class ControladorMostro : MonoBehaviour
             else
             {
                 ResetTimerSinDos();
+                
             }
         }
        
@@ -44,7 +46,7 @@ public class ControladorMostro : MonoBehaviour
     void ResetTimer()
     {
         currentTime = startTime; 
-        numeroRandom=Random.Range(1, 10);
+        numeroRandom=Random.Range(1, 3);
     }
     void ResetTimerSinDos()
     {

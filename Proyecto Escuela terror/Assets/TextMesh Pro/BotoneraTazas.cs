@@ -32,7 +32,7 @@ public class BotoneraTazas : MonoBehaviour
         // Verificar si el botón es el correcto en la secuencia
         if (boton != secuenciaCorrecta[secuenciaActual.Count - 1])
         {
-            Debug.Log("Secuencia incorrecta. Reiniciando...");
+            Debug.Log("Orden incorrecto");
             ReiniciarSecuencia();
         }
         else if (secuenciaActual.Count == secuenciaCorrecta.Count)
@@ -55,7 +55,7 @@ public class BotoneraTazas : MonoBehaviour
     private void SecuenciaCompletada()
     {
         secuenciaCompletada = true;
-        Debug.Log("¡Secuencia completada correctamente!");
+        Debug.Log("ORDEN CORRECTO");
         // Aquí puedes activar un booleano o ejecutar otra acción
     }
 }
