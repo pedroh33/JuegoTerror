@@ -35,9 +35,10 @@ public class TazasController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") )
+        if (collision.CompareTag("TriggerJugador") )
         {
             dentro = true;
+            Cursor.visible = true;
         }
 
     }
@@ -47,6 +48,7 @@ public class TazasController : MonoBehaviour
         volteada = false;
         taza1.SetActive(false);
         taza1dentro.SetActive(false);
+        Cursor.visible = false;
     }
 
    public void Boton()

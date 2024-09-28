@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuertaFinal : MonoBehaviour
 {
@@ -8,17 +9,20 @@ public class PuertaFinal : MonoBehaviour
     public int numeroRandom;
     public string codigo;
     public bool abierta;
+    public AudioSource ding;
     private void Start()
     {
         numeroRandom = Random.Range(1000, 9999);
         boton.SetActive(false);
         abierta = false;
+        ding.enabled = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("TriggerJugador"))
         {
             boton.SetActive(true);
+            Cursor.visible = true;
         }
         
     }
@@ -27,6 +31,7 @@ public class PuertaFinal : MonoBehaviour
         if (collision.CompareTag("TriggerJugador"))
         {
             boton.SetActive(false);
+            Cursor.visible = false;
         }
         
     }
@@ -76,10 +81,19 @@ public class PuertaFinal : MonoBehaviour
         if(numeroRandom.ToString() == codigo)
         {
             abierta = true;
+
         }
         else
         {
             codigo = null;
+            StartCoroutine(Ding());
         }
+    }
+    public IEnumerator Ding()
+    {
+        ding.enabled = true;
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(2);
+        ding.enabled = false;
     }
 }

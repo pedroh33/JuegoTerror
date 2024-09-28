@@ -6,6 +6,7 @@ public class ControladorGol : MonoBehaviour
 {
     public float contadorGoles;
     public GameObject pelota;
+    public AudioSource ding;
     void Start()
     {
         contadorGoles = 0;
@@ -17,10 +18,14 @@ public class ControladorGol : MonoBehaviour
         {
             contadorGoles++;
             pelota.transform.position = new Vector3(17.14f, 4.2026f, 0);
+            StartCoroutine(Ding());
         }                             //cuando el trigger toca con pelota pasa:
     }
-    void Update()
+    public IEnumerator Ding()
     {
-        
+        ding.enabled = true;
+        yield return new WaitForSeconds(2f);
+        ding.enabled = false;
     }
+  
 }

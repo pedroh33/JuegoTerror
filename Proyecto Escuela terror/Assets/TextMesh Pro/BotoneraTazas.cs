@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BotoneraTazas : MonoBehaviour
 {
+    public GameObject piezacuadro3;
     public ContadorTaza azul;
     public ContadorTaza verde;
     public ContadorTaza violeta;
@@ -54,6 +55,7 @@ public class BotoneraTazas : MonoBehaviour
     // Activar lógica al completar la secuencia correctamente
     private void SecuenciaCompletada()
     {
+        piezacuadro3.transform.position = new Vector3(57f, -3.8f, 0);
         secuenciaCompletada = true;
         Debug.Log("ORDEN CORRECTO");
         // Aquí puedes activar un booleano o ejecutar otra acción

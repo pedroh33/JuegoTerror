@@ -8,11 +8,13 @@ public class LOCKER : MonoBehaviour
     public GameObject ImagenLocker;
     public bool escondido;
     public bool cercaLocker;
+    public AudioSource respira;
     void Start()
     {
         ImagenLocker.SetActive(false);
         escondido = false;
         cercaLocker = false;
+        respira.enabled = false;
 
     }
 
@@ -31,6 +33,7 @@ public class LOCKER : MonoBehaviour
                 escondido = true;
                 Debug.Log("Entra");
                 jugador.escondido = true;
+                respira.enabled = true;
 
             }
             else 
@@ -41,6 +44,7 @@ public class LOCKER : MonoBehaviour
                 escondido = false;
                 Debug.Log("Sale");
                 jugador.escondido = false;
+                respira.enabled = false;
             }
         }
     }

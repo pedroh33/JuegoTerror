@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class controladorpuzzlefutbol : MonoBehaviour
 {
+    public GameObject piezaCuadro;
+    public GameObject pelota;
     public ControladorGol controlador;
     public bool Gano;
     public GameObject arco1;
@@ -12,9 +14,11 @@ public class controladorpuzzlefutbol : MonoBehaviour
     public float yD;
     public float xI;              
     public float yI;
+   
     void Start()
     {
-        Gano = false;    
+        Gano = false;
+      
     }
 
     
@@ -24,30 +28,43 @@ public class controladorpuzzlefutbol : MonoBehaviour
         {
             arco1.transform.position = new Vector3(xD, yD , 0);
             arco2.transform.position = new Vector3(xI, yI , 0);
+           
+            
         }
         if (controlador.contadorGoles == 1)
         {
             arco1.transform.position = new Vector3(xD, yD, 0);
             arco2.transform.position = new Vector3(xI, yI, 0);
+           
         }
         if (controlador.contadorGoles == 2)
         {
             arco1.transform.position = new Vector3(xI, yI, 0);
             arco2.transform.position = new Vector3(xD, yD, 0);
+          
         }
         if (controlador.contadorGoles == 3)
         {
             arco1.transform.position = new Vector3(xI, yI, 0);
-            arco2.transform.position = new Vector3(xD, yD, 0);  //aca cambiamos la posicion de los arcos
+            arco2.transform.position = new Vector3(xD, yD, 0);
+           //aca cambiamos la posicion de los arcos
         }
         if (controlador.contadorGoles == 4)
         {
             arco1.transform.position = new Vector3(xD, yD, 0);
             arco2.transform.position = new Vector3(xI, yI, 0);
+        
         }
         if (controlador.contadorGoles == 5)
         {
-            Gano = true;
+            if(piezaCuadro != null)
+            {
+                piezaCuadro.transform.position = new Vector3(17.22f, 4.17f, 0);
+                Destroy(pelota);
+                Gano = true;
+            }
+            
         }
     }
+   
 }

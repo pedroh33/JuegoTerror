@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Aula1Puzzle : MonoBehaviour
 {
+    public GameObject piezaCuadro;
     public bool completada;
     public BancoController banco1;
     public BancoController banco2;
@@ -35,6 +36,13 @@ public class Aula1Puzzle : MonoBehaviour
             !banco10.volteado && !banco12.volteado && !banco14.volteado && !banco15.volteado && !banco16.volteado)
         {
             completada = true;
+        }
+        if (completada)
+        {
+            if(piezaCuadro != null) {
+                piezaCuadro.transform.position = new Vector3(-20.74f, -1.398f, 0);
+            }
+            
         }
     }
     

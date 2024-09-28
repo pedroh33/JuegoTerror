@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Escuela.unity
     guid: d87c73bccfc9aac4b8ea6c5c4b6745d8
   - enabled: 1
-    path: Assets/Scenes/Numeric.unity
-    guid: 4fcf32a319bec1d41af159e6e6e4a2bd
+    path: Assets/Scenes/Muerte.unity
+    guid: aebfa8885c98c6049bde4995a74c82e0
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Continuara.unity
+    guid: 0a28c0e9c4123db40a7d3f82a2cbb691
   m_configObjects: {}

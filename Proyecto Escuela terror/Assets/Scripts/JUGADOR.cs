@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class JUGADOR : MonoBehaviour
 {
+    public Animator anim;
     Rigidbody2D rb;
     public float velocidad;
     public float rotVelocidad;
@@ -12,18 +13,43 @@ public class JUGADOR : MonoBehaviour
     public bool escondido;
     public bool ultraVioleta;
     public Light2D linterna;
+    public AudioSource pasos;
+    public bool pieza1;
+    public bool pieza2;
+    public bool pieza3;
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         cercaLocker = false;
         escondido = false;
         ultraVioleta = false;
+        pasos.enabled = false;
+        pieza1 = false;
+        pieza2 = false;
+        pieza3 = false;
+
     }
     private void Update()
     {
         if (ultraVioleta)
         {
             linterna.color = Color.magenta;
+        }
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            anim.Play("CaminaPersonaje");
+            pasos.enabled = true;
+        }
+        else if (!Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+        {
+            anim.Play("CaminaParaAtras");
+            pasos.enabled = true;
+        }
+        else
+        {
+            anim.Play("IdlePersonake");
+            pasos.enabled = false;
         }
     }
     void FixedUpdate()
