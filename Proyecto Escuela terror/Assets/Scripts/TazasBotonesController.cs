@@ -5,11 +5,13 @@ using UnityEngine;
 public class TazasBotonesController : MonoBehaviour
 {
     public GameObject canvas;
+    public bool visto;
 
    
     void Start()
     {
         canvas.SetActive(false);
+        visto = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,6 +20,7 @@ public class TazasBotonesController : MonoBehaviour
         {
             canvas.SetActive(true);
             Cursor.visible = true;
+            visto = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
