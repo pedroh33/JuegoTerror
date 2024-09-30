@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TickerController : MonoBehaviour
 {
-//DISCLAIMER : ESTO SE VA A CAMBIAR CUANDO LLEGUE LA CLASE QUE EXPLICAN ESTO (AHORA FUE COMPLETAMENTE ROBADO DE STACKOVERFLOW)
-
+    public AudioSource screamer;
+    public AudioSource risa;
+    public Animator anim;
     public Transform target;    // The object to chase
     public float speed = 5f;    // Speed of the chasing object
     public float stoppingDistance = 1f; // Distance at which the object will stop chasing
@@ -13,6 +14,8 @@ public class TickerController : MonoBehaviour
 
     void Start()
     {
+        screamer.enabled = false;
+        risa.enabled = false;
         rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component
     }
 
@@ -45,9 +48,17 @@ public class TickerController : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                Destroy(gameObject);
+                screamer.enabled = true;
+                anim.Play("pantallaroja");
+                Destroy(gameObject, 0.5f);
             }
+        if (collision.CompareTag("LinternaCollider"))
+        {
+            risa.enabled = true;
+            Destroy(gameObject,0.5f);
         }
+
+    }
 
     }
 

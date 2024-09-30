@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControllerCuadro : MonoBehaviour
 {
+    public AudioSource puertasoni;
     public GameObject puerta;
     public GameObject canvas;
     public JUGADOR jugador;
@@ -18,6 +19,7 @@ public class ControllerCuadro : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        puertasoni.enabled = false;
         canvas.SetActive(false);
         pieza1.SetActive(false);
         pieza2.SetActive(false);
@@ -60,6 +62,7 @@ public class ControllerCuadro : MonoBehaviour
         {
             puerta.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -0.945f);
             puerta.transform.position = new Vector3(43.611f, -21.108f, 0);
+            puertasoni.enabled = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
