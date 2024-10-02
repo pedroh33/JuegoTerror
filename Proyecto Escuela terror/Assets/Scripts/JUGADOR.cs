@@ -19,7 +19,7 @@ public class JUGADOR : MonoBehaviour
     public bool pieza3;
     void Start()
     {
-        
+       // Cursor.visible = false;
         rb = GetComponent<Rigidbody2D>();
         cercaLocker = false;
         escondido = false;

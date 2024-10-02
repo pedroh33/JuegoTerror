@@ -6,7 +6,7 @@ public class TazasController : MonoBehaviour
 {
     public GameObject taza1;
     public GameObject taza1dentro;
-    bool volteada;
+    [SerializeField] bool volteada;
     public bool dentro;
     // Start is called before the first frame update
     void Start()
@@ -35,12 +35,11 @@ public class TazasController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("TriggerJugador") )
+        if (collision.CompareTag("TriggerJugador"))
         {
             dentro = true;
-            Cursor.visible = true;
+          //  Cursor.visible = true;
         }
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -48,7 +47,7 @@ public class TazasController : MonoBehaviour
         volteada = false;
         taza1.SetActive(false);
         taza1dentro.SetActive(false);
-        Cursor.visible = false;
+       // Cursor.visible = false;
     }
 
    public void Boton()

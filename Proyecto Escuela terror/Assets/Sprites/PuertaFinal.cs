@@ -22,7 +22,7 @@ public class PuertaFinal : MonoBehaviour
         if (collision.CompareTag("TriggerJugador"))
         {
             boton.SetActive(true);
-            Cursor.visible = true;
+          //  Cursor.visible = true;
         }
         
     }
@@ -31,7 +31,7 @@ public class PuertaFinal : MonoBehaviour
         if (collision.CompareTag("TriggerJugador"))
         {
             boton.SetActive(false);
-            Cursor.visible = false;
+           // Cursor.visible = false;
         }
         
     }
