@@ -11,9 +11,9 @@ public class ControllerCuadro : MonoBehaviour
     public GameObject pieza1;
     public GameObject pieza2;
     public GameObject pieza3;
-    bool completo1;
-    bool completo2;
-    bool completo3;
+    public bool completo1;
+    public bool completo2;
+    public bool completo3;
 
     bool dentro;
     // Start is called before the first frame update

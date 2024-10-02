@@ -81,7 +81,7 @@ public class PuertaFinal : MonoBehaviour
         if(numeroRandom.ToString() == codigo)
         {
             abierta = true;
-
+            SceneManager.LoadScene(2);
         }
         else
         {
@@ -93,7 +93,6 @@ public class PuertaFinal : MonoBehaviour
     {
         ding.enabled = true;
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(2);
         ding.enabled = false;
     }
 }

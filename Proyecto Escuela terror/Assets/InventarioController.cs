@@ -20,7 +20,7 @@ public class InventarioController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jugador.pieza1 && !cuadro.pieza1)
+        if (jugador.pieza1 && !cuadro.completo1)
         {
             pieza1.SetActive(true);
         }
@@ -28,7 +28,7 @@ public class InventarioController : MonoBehaviour
         {
             pieza1.SetActive(false);
         }
-        if (jugador.pieza2 && !cuadro.pieza2)
+        if (jugador.pieza2 && !cuadro.completo2)
         {
             pieza2.SetActive(true);
         }
@@ -36,7 +36,7 @@ public class InventarioController : MonoBehaviour
         {
             pieza2.SetActive(false);
         }
-        if (jugador.pieza3 && !cuadro.pieza3)
+        if (jugador.pieza3 && !cuadro.completo3)
         {
             pieza3.SetActive(true);
         }
