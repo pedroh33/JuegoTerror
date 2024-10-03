@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class piezaCuadroController2 : MonoBehaviour
+public class piezaCuadroController3 : MonoBehaviour
 {
     public JUGADOR jugador;
     // Start is called before the first frame update
@@ -15,8 +15,9 @@ public class piezaCuadroController2 : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            jugador.pieza2 = true;
+            jugador.pieza3 = true;
             Destroy(gameObject);
+            Debug.Log("Tengo una pieza del cuadro");
         }
     }
 }
