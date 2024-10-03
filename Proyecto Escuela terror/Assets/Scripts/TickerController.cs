@@ -4,62 +4,83 @@ using UnityEngine;
 
 public class TickerController : MonoBehaviour
 {
+    public Transform ticker;
+    public GameObject prefab;
+    public JUGADOR jugador;
     public AudioSource screamer;
     public AudioSource risa;
     public Animator anim;
-    public Transform target;    // The object to chase
-    public float speed = 5f;    // Speed of the chasing object
-    public float stoppingDistance = 1f; // Distance at which the object will stop chasing
-    private Rigidbody2D rb;     // Rigidbody2D for movement
+    public Transform target;
+    public float speed = 5f;
+    public float stoppingDistance = 1f;
+    private Rigidbody2D rb;
 
     void Start()
     {
         screamer.enabled = false;
         risa.enabled = false;
-        rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component
+        rb = GetComponent<Rigidbody2D>();
+        StartCoroutine(InstantiatePrefabAtRandomTimes());
     }
 
     void Update()
     {
         if (target != null)
         {
-            // Calculate the distance to the target
+
             float distance = Vector2.Distance(transform.position, target.position);
 
-            // If the distance is greater than the stopping distance, move towards the target
+
             if (distance > stoppingDistance)
             {
-                // Move towards the target
+
                 Vector2 direction = (target.position - transform.position).normalized;
                 rb.velocity = direction * speed;
 
-                // Optionally rotate the object to face the target
+
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
                 rb.rotation = angle;
             }
             else
             {
-                // Stop the object when it reaches the stopping distance
+
                 rb.velocity = Vector2.zero;
             }
         }
     }
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-                screamer.enabled = true;
-                anim.Play("pantallaroja");
-                Destroy(gameObject, 0.5f);
-            }
+            jugador.cordura -= 60;
+            screamer.enabled = true;
+            anim.Play("pantallaroja");
+            Destroy(gameObject, 0.5f);
+        }
         if (collision.CompareTag("LinternaCollider"))
         {
             risa.enabled = true;
-            Destroy(gameObject,0.5f);
+            Destroy(gameObject, 0.5f);
         }
 
     }
 
+    IEnumerator InstantiatePrefabAtRandomTimes()
+    {
+        while (true)
+        {
+            // Wait for a random amount of time between minTime and maxTime
+            float randomWaitTime = Random.Range(5f, 15f);
+            yield return new WaitForSeconds(randomWaitTime);
+
+            // Check if prefab and moving object are assigned
+            if (prefab != null && gameObject != null)
+            {
+                // Instantiate the prefab at the moving object's position and rotation
+                Instantiate(prefab, ticker.position, ticker.rotation);
+            }
+        }
+
     }
 
-
+}

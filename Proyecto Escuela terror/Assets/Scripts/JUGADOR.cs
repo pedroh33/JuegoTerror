@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class JUGADOR : MonoBehaviour
 {
+    public float cordura;
     public Animator anim;
     Rigidbody2D rb;
     public float velocidad;
