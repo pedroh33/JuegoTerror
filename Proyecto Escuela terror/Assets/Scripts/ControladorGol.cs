@@ -16,15 +16,15 @@ public class ControladorGol : MonoBehaviour
     {
         if (collision.CompareTag("Pelota"))
         {
-            contadorGoles++;
-            pelota.transform.position = new Vector3(17.14f, 4.2026f, 0);
+            contadorGoles++;                                              //contador de goles y posicion de pelota
+            pelota.transform.position = new Vector3(17.14f, 4.2026f, 0); 
             StartCoroutine(Ding());
-        }                             //cuando el trigger toca con pelota pasa:
+        }                             
     }
     public IEnumerator Ding()
     {
         ding.enabled = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f); //activa sonido espera 2 seg y vuelve a apagar
         ding.enabled = false;
     }
   

@@ -9,7 +9,7 @@ public class CTRLLIMPIADOR : MonoBehaviour
     public AudioSource error;
     private void OnTriggerEnter2D(Collider2D collision) // acepta que asume el trigger donde pongas el script
     {
-        if (collision.CompareTag("Pelota"))  //cuando el trigger toca con pelota pasa:
+        if (collision.CompareTag("Pelota"))  //Si toca el arco que no es el contador se resetea
         {
             contador.contadorGoles = 0; //reinicia contador
             pelota.transform.position = new Vector3(17.14f, 4.2026f, 0);
