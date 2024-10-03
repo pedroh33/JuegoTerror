@@ -19,13 +19,13 @@ public class TazasBotonesController : MonoBehaviour
         if (collision.CompareTag("TriggerJugador"))
         {
             canvas.SetActive(true);
-            Cursor.visible = true;
+          
             visto = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         canvas.SetActive(false);
-        Cursor.visible = false;
+       
     }
 }

@@ -17,11 +17,15 @@ public class ScreamerController : MonoBehaviour
        
         if (collision.CompareTag("TriggerJugador") && panel.visto)
         {
-            if(video!= null && imagen != null)
-            video.SetActive(true);
-            imagen.SetActive(true);
-            Destroy(imagen, 1f);
-            Destroy(video, 1f);
+            if(video != null)
+            {
+                if (imagen != null)
+                video.SetActive(true);
+                imagen.SetActive(true);
+                Destroy(imagen, 1f);
+                Destroy(video, 1f);
+            }
+            
         }
     }
 }
