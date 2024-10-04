@@ -21,6 +21,7 @@ public class MuerteController : MonoBehaviour
     {
         if(!jugador.escondido &&  timer.numeroRandom == 2 && timer.currentTime<0.001f)
         {
+            //escena de muerte
            SceneManager.LoadScene(1);
         }
         if(timer.numeroRandom == 2)

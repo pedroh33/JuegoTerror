@@ -3,12 +3,12 @@ using UnityEngine;
 public class ControladorMostro : MonoBehaviour
 {
     public GameObject agujaHora;
-    public float startTime = 10f; 
-    public float currentTime;
+    public float startTime; //numero fijo para resetear el timer    
+    public float currentTime; // numero que se va a ir descontando a medida que pase el tiempo 
     public float numeroRandom;
     Animator anim;
    // public AudioSource sonidoMostro;
-
+   
     void Start()
     {
         currentTime = startTime;
