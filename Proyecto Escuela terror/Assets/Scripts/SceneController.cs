@@ -13,7 +13,7 @@ public class SceneController : MonoBehaviour
 
     public IEnumerator CambiarEscena()
     {
-        yield return new WaitForSeconds(9);
+        yield return new WaitForSeconds(14);
         SceneManager.LoadScene(0);
     }
 }
