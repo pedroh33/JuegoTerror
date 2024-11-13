@@ -19,7 +19,7 @@ public class MuerteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!jugador.escondido &&  timer.numeroRandom == 2 && timer.currentTime<0.001f)
+        if(!jugador.escondido &&  timer.numeroRandom == 2 && timer.currentTime < 0.1f)
         {
             //escena de muerte
            SceneManager.LoadScene(1);
