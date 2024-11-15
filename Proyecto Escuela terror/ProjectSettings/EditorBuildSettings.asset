@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu Inicial.unity
+    guid: 3804825a23244b64f8c2a710d7a5be5a
+  - enabled: 1
     path: Assets/Scenes/Escuela.unity
     guid: d87c73bccfc9aac4b8ea6c5c4b6745d8
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Continuara.unity
     guid: 0a28c0e9c4123db40a7d3f82a2cbb691
+  - enabled: 1
+    path: Assets/Scenes/MensajeInicio.unity
+    guid: 1768d290515300543ab004c9f89880b6
   m_configObjects: {}

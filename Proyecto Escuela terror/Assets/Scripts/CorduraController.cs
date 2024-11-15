@@ -26,7 +26,7 @@ public class CorduraController : MonoBehaviour
     {
      if(cordura.cordura < 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         float fillValue = cordura.cordura / 100;
         slider.value = fillValue;
