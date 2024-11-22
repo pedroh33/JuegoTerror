@@ -81,7 +81,7 @@ public class PuertaFinal : MonoBehaviour
         if(numeroRandom.ToString() == codigo)
         {
             abierta = true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         else
         {

@@ -13,6 +13,10 @@ public class MenuController : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKey(KeyCode.M))
+        {
+            SceneManager.LoadScene(5);
+        }
         if (abierto)
         {
             controles.SetActive(true);
