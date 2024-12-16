@@ -8,6 +8,9 @@ TagManager:
   - Pelota
   - LinternaCollider
   - ApagadorLinterna
+  - ColliderMonstruo
+  - Caja
+  - Monstruo
   layers:
   - Default
   - TransparentFX
