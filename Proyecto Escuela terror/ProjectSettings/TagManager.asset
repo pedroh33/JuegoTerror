@@ -7,6 +7,7 @@ TagManager:
   - TriggerJugador
   - Pelota
   - LinternaCollider
+  - ApagadorLinterna
   layers:
   - Default
   - TransparentFX
