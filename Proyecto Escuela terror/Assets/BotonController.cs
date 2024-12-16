@@ -79,7 +79,7 @@ public class BotonController : MonoBehaviour
 
     public IEnumerator apagarLuz()
     {
-        yield return new WaitForSeconds(0.42f);
+        yield return new WaitForSeconds(1f);
         mataMonstruo.transform.position = new Vector3(132.5f, 0.7f, 5.470638f);
         luz.SetActive(false);
         prendido = false;
